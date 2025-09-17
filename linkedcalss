@@ -75,6 +75,11 @@ public class LinkedList_No_HT
    public void removeLastNode()
    {
          //complete this method
+		Node curr=ListName;
+		while (curr.next!=null){
+			curr=curr.next;
+		}
+		curr.next=null;
    }
     
     
@@ -82,13 +87,28 @@ public class LinkedList_No_HT
    public void removeAtIndex(int index)
    {
          //complete this method
+		 //index starts at 1
+		 int i=1;
+		 Node Current=ListName;
+		 while (i<index){
+			 Current=Current.next;
+			 i++;
+		 }
+			 Node temp=Current.next.next;
+			 Current.next=null;
+			 Current.next=temp;
    }
           
    //method #6: countNodes
    public int countNodes()
    {
       int listSize= 0;
-      
+	Node curr=ListName;
+	if (ListName!=null){
+		while(curr!=null){
+		listSize++;
+		curr=curr.next
+	}
       //complete this method to return the list size.
         
       return listSize; 
