@@ -3,10 +3,11 @@
   The class does NOT use Head and Tail pointer as the textbook class deos.
 */
 
+import java.util.*;
 public class LinkedList_No_HT
 {
    public Node ListName;
-
+	public ArrayList<Integer> stack= new ArrayList();
    //constructor method to create a list object with a specifc name. 
    public LinkedList_No_HT()
    {
@@ -118,6 +119,18 @@ public class LinkedList_No_HT
    //method #7: pritnInReverse (must be a Recursive method)
    public void printInReverseRecursive(Node L)
    {
+		if (L!=null){
+			stack.add(L.data);
+			printInReverseRecursive(L.next);
+		}
+		else{
+			while(stack!isEmpty()){
+				System.out.println(stack.get(stack.size()-1));
+				stack.remove(stack.size()-1));
+			}
+		}
+
+	
       //complete this method as recursive method to ptint the list in revers order.
    }   
 
